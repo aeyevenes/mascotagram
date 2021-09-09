@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
+  # Root
+  root to: 'categories#index'
+  # Devise
   devise_for :providers
   devise_for :customers
-  root to: 'pages#home'
+
+  # Resources
+  resources :categories
   resources :customers
   resources :providers
-  resources :categories
   resources :social_networks
   resources :services
   resources :appointments

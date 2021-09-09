@@ -1,0 +1,10 @@
+<div class="container my-3">
+  <!-- Category -->
+  <h1><%= @category.name %></h1>
+  <!-- Services -->
+  <ul>
+    <% @category.services.each do |service| %>
+      <li><%= service.name %> - <%= service.provider.full_name %></li>
+    <% end %>
+  </ul>
+</div>
