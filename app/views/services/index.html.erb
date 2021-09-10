@@ -1,1 +1,14 @@
 <h1>Servicios</h1>
+
+<div class="cards">
+  <% @services.each do |service| %>
+    <div class="card">
+      <p><%= service.address %></p>
+      <p><%= service.name %></p>
+      <p><%= service.city %></p>
+      <p><%= service.start_date %></p>
+      <%= link_to "ver detalles", service_path(service), class:'btn btn-primary'%>
+    </div>
+  <% end %>
+</div>
+ 

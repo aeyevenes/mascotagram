@@ -1,1 +1,7 @@
-<h1>shows de servicios</h2>
+<h1><%=@service.name%></h1>
+
+<p><%= @service.address %></p>
+<p><%= @service.name %></p>
+<p><%= @service.city %></p>
+<p><%= @service.start_date %></p>
+<%= link_to "volver", services_path, class:'btn btn-primary'%>

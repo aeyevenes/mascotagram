@@ -2,37 +2,26 @@ class ServicesController < ApplicationController
   def index
     @services = Service.all
   end
-  # def new
-  #   @service =  service.new
-  # end
 
-  # def create
-  # end
+  def new
+    @service = Service.new
+  end
 
-  # def show
-  # end
+  def show
+    @service = Service.find(params[:id])
+  end
 
-  # def edit
-  # end
+  def create
+    @service = Service.new(service_params)
+  end
 
-  # def update
-  # end
+  def destroy
+    @service.destroy
+  end
 
-  # def destroy
-  # end
+  private
 
-  # private
-
-  # def set_user
-  #   @user = current_user
-  # end
-
-  # def set_service
-  #   @service = service.find(params[:id])
-  #   authorize @service
-  # end
-
-  # def service_params
-  #   params.require(:service).permit(:name, :description, :price, :photo)
-  # end
+  def service_params
+    params.require(:service).permit(:comment, :service_id)
+  end
 end
