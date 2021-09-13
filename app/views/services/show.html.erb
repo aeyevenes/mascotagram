@@ -1,12 +1,20 @@
-<h1><%= @service.name %></h1>
+<div class="container my-3">
+  <h1><%= @service.name %></h1>
+  <p>Dirección: <%= @service.address %></p>
+  <p>Categoría: <%= @service.category.name %></p>
+  <p>Ciudad: <%= @service.city %></p>
+  <p>Horario de atención: <%= @service.availability %></p>
+  <!-- Fotos -->
+  <div class="d-flex justify-content-around">
+    <% @service.photos.each do |photo| %>
+      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
+  </div>
 
- <p><%= @service.address %></p>
- <p><%= @service.name %></p>
- <p><%= @service.city %></p>
- <p><%= @service.start_date %></p>
-<%= link_to "volver", services_path, class:'btn btn-secondary'%>
-
-<small><%= link_to "delete", services_path, data: { confirm: "Are you sure you want to remove #{@service.name} from your #{@service.name} service"}, class: 'btn btn-outline-secondary' %></small>
-<small><%= link_to "edit", edit_service_path, data: { confirm: "Are you sure you want to edit #{@service.name} from your #{@service.name} service"}, class: 'btn btn-outline-secondary' %></small>
-
- 
+  <!-- Botones -->
+  <div class="d-flex">
+    <%= link_to "Volver", services_path, class:'btn btn-secondary'%>
+    <%= link_to "Eliminar", services_path, data: { confirm: "¿Estás seguro de eliminar #{@service.name}?"}, class: 'btn btn-outline-secondary' %>
+    <%= link_to "Editar", edit_service_path, class: 'btn btn-flat' %>
+  </div>
+</div>

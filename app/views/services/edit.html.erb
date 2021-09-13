@@ -1,24 +1,14 @@
-<h1> Edit Service </h1>
-<h1>Edit Service</h1>
-<%= link_to "volver", services_path, class:'btn btn-secondary'%>
-<h1>New services Edit</h1>
-
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-      <h1>Edit service</h1>
-      <%= simple_form_for @service = Service. find(params[:id])do |f| %>
-        <%= f.input :name %>
-        <%= f.input :address %>
-        <%= f.input :telephone %>
-        <%= f.input :category %>
-        <%= f.input :description %>
-        <%= f.submit class: 'btn btn-primary' %>
-      <% end %>
-    </div>
-  </div>
-</div>
-<div>
-<%= link_to "back to the future", services_path, class:'btn btn-primary'%>
-  
+<div class="container my-3">
+  <h1>Editar servicio</h1>
+  <%= simple_form_for @service do |f| %>
+    <%= f.input :name, label: "Nombre" %>
+    <%= f.input :address, label: "Dirección" %>
+    <%= f.input :telephone, label: "Teléfono" %>
+    <%= f.input :availability, label: "Horario de atención" %>
+    <%= f.association :category, label: "Categoría", include_blank: false %>
+    <%= f.input :description, label: "Descripción" %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.submit "Editar", class: 'btn btn-flat' %>
+  <% end %>
+  <%= link_to "Volver al detalle", service_path(@service), class:'btn btn-secondary'%>
 </div>

@@ -1,5 +1,5 @@
 class ServicesController < ApplicationController
-  before_action only: %i[new edit update destroy]
+  before_action :set_service, only: %i[show create edit update destroy]
 
   def index
     @services = Service.all
@@ -13,19 +13,24 @@ class ServicesController < ApplicationController
   end
 
   def create
-    @service = Service.new # (service_params)
-    @service.save
-    redirect_to services_path
+    if @service.save
+      redirect_to services_path
+      flash[:notice] = "El servicio #{@service.name} ha sido creado exitosamente."
+    else
+      render :new
+    end
   end
 
   def edit
-    @service = Service.find(params[:id])
   end
 
   def update
-    @service = Service.find(params[:id])
-    redirect_to service_path
-    flash[:notice] = 'service was updated.'
+    if @service.update(service_params)
+      redirect_to service_path
+      flash[:notice] = "El servicio #{@service.name} ha sido actualizado exitosamente."
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -33,15 +38,13 @@ class ServicesController < ApplicationController
     redirect_to services_path
   end
 
-  def show
+  private
+
+  def set_service
     @service = Service.find(params[:id])
   end
 
-  # def set_service
-  # @service = Service.find(params[:service_id])
-  # end
-
   def service_params
-    params.require(:service).permit(:name, :address, :telephone, :description)
+    params.require(:service).permit(:name, :address, :telephone, :description, :availability, :category_id, photos: [])
   end
 end

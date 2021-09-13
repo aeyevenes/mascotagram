@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # Root
-  root to: 'services#index'
+  root to: 'categories#index'
   # Devise
   devise_for :providers
   devise_for :customers

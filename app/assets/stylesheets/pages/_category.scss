@@ -1,0 +1,9 @@
+@import "../components/cards";
+
+.carousel-item {
+  img {
+    background-size: cover;
+    background-position: center;
+  max-height: 300px;
+  }
+}
