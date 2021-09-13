@@ -108,6 +108,14 @@ servicio_4 = Service.new(
   telephone: Faker::PhoneNumber.cell_phone,
   rating: rand(1..5)
 )
+servicio_5 = Service.new(
+  name: "Veterinaria uno",
+  address: Faker::Address.street_address,
+  city: Faker::Address.city,
+  description: Faker::Lorem.paragraph,
+  telephone: Faker::PhoneNumber.cell_phone,
+  rating: rand(1..5)
+)
 
 servicio_4.category = adopcion
 servicio_4.provider = proveedor_3
