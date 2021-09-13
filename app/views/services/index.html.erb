@@ -1,3 +1,5 @@
+
+  <h2>Servicios</h2>
 <h1>Servicios</h1>
 
 <div class="cards">
@@ -10,5 +12,9 @@
       <%= link_to "ver detalles", service_path(service), class:'btn btn-primary'%>
     </div>
   <% end %>
-</div>
- 
+
+  <%= link_to new_service_path do %>
+  <i class="fa fa-plus"></i> <h1> Add a new service </h1>
+
+  </div>
+ <% end %>
