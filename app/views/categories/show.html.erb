@@ -1,10 +1,17 @@
 <div class="container my-3">
+<div class="card-trip">
+  <img src="https://res.cloudinary.com/bad-kuky-0ne/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1631508541/large_22gato_miufbw.png" />
   <!-- Category -->
   <h1><%= @category.name %></h1>
   <!-- Services -->
   <ul>
     <% @category.services.each do |service| %>
       <li><%= service.name %> - <%= service.provider.full_name %></li>
+      <%= link_to "atras", categories_path, class:'btn btn-primary'%>
+      </div>
+      <%= link_to "Agrega un comentario", "#", class: "btn btn-ghost" %>
+      <%= link_to "Reserva ahora", "#", class: "btn btn-flat" %>
+      <%= link_to "evaluar", "#", class: "btn btn-gradient" %>
     <% end %>
   </ul>
 </div>
