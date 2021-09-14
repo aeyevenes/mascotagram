@@ -3,6 +3,7 @@ class ServicesController < ApplicationController
 
   def index
     @services = Service.all
+    @services = Service.Geocoded
   end
 
   def show
