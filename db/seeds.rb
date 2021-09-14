@@ -64,8 +64,8 @@ proveedor_5 = Provider.create(
 puts "Creando servicios.."
 servicio_1 = Service.new(
   name: "Peluquería uno",
-  address: Faker::Address.street_address,
-  city: Faker::Address.city,
+  address: "Céspedes y González 993, Iquique",
+  city: "Iquique",
   description: Faker::Lorem.paragraph,
   telephone: Faker::PhoneNumber.cell_phone,
   rating: rand(1..5)
@@ -76,8 +76,8 @@ servicio_1.save
 
 servicio_2 = Service.new(
   name: "Veterinaria uno",
-  address: Faker::Address.street_address,
-  city: Faker::Address.city,
+  address: "Maullín 842, Santiago",
+  city: "Santiago",
   description: Faker::Lorem.paragraph,
   telephone: Faker::PhoneNumber.cell_phone,
   rating: rand(1..5)
@@ -89,8 +89,8 @@ servicio_2.save
 
 servicio_3 = Service.new(
   name: "Hotel de mascotas",
-  address: Faker::Address.street_address,
-  city: Faker::Address.city,
+  address: "Avenida Padre Alfredo Arteaga 1660, Lo Barnechea",
+  city: "Santiago",
   description: Faker::Lorem.paragraph,
   telephone: Faker::PhoneNumber.cell_phone,
   rating: rand(1..5)
@@ -102,21 +102,39 @@ servicio_3.save
 
 servicio_4 = Service.new(
   name: "Funeraria",
-  address: Faker::Address.street_address,
-  city: Faker::Address.city,
-  description: Faker::Lorem.paragraph,
-  telephone: Faker::PhoneNumber.cell_phone,
-  rating: rand(1..5)
-)
-servicio_5 = Service.new(
-  name: "Veterinaria uno",
-  address: Faker::Address.street_address,
-  city: Faker::Address.city,
+  address: "Pedro León Ugalde 1197, Santiago",
+  city: "Santiago",
   description: Faker::Lorem.paragraph,
   telephone: Faker::PhoneNumber.cell_phone,
   rating: rand(1..5)
 )
 
-servicio_4.category = adopcion
-servicio_4.provider = proveedor_3
+servicio_4.category = petshop
+servicio_4.provider = proveedor_5
 servicio_4.save
+
+servicio_5 = Service.new(
+  name: "Veterinaria uno",
+  address: "Lastarria 288, Santiago",
+  city: "Santiago",
+  description: Faker::Lorem.paragraph,
+  telephone: Faker::PhoneNumber.cell_phone,
+  rating: rand(1..5)
+)
+
+servicio_5.category = adopcion
+servicio_5.provider = proveedor_4
+servicio_5.save
+
+servicio_6 = Service.new(
+  name: "Veterinaria dos",
+  address: "Lastarria 230, Santiago",
+  city: "Santiago",
+  description: Faker::Lorem.paragraph,
+  telephone: Faker::PhoneNumber.cell_phone,
+  rating: rand(1..5)
+)
+
+servicio_6.category = adopcion
+servicio_6.provider = proveedor_3
+servicio_6.save
