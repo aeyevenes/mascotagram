@@ -1,4 +1,3 @@
-<h1>Servicios</h1>
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/bad-kuky-0ne/image/upload/v1631634844/gatoooooo_efwyd6.jpg);">
   <div class="container">
     <h1>Busca los mejores <strong>servicios de mascotas 🦕🐠🐿🐇🦔</strong></h1>
@@ -6,27 +5,47 @@
     <a class="btn btn-flat" href="#">Contáctanos</a>
   </div>
 </div>
-<div class="container my-3">
-<div class="cards">
-  <% @services.each do |service| %>
-  <div class ="cards">
-      <p><%= service.address %></p>
-      <p><%= service.name %></p>
-      <p><%= service.city %></p>
-      <p><%= service.availability %></p>
-      <%= link_to "ver detalles", service_path(service), class:'btn btn-primary'%>
-    </div>
-  <% end %>
-
-  <%= link_to new_service_path do %>
-  <i class="fa fa-plus"></i> <h1> Add a new service </h1>
-
- <div class ="container my-3">
+<div class="d-flex justify-content-between align-items-center m-3">
+  <h1>Servicios</h1>  
+  <%= link_to "+ Crear un servicio", new_service_path, class: "btn btn-flat" %>
+</div>
+<div class="d-flex justify-content-around mx-3">
+  <div class="cards">
+    <% @services.each do |service| %>
+      <div class="card-trip">
+        <!-- Carrusel de fotos -->
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <% service.photos.each_with_index do |photo, index| %>
+              <% if index.zero? %>
+                <div class="carousel-item active">
+                 <img class="d-block w-100" src="<%= cl_image_path photo.key %>" alt="slide 1">
+                </div>
+              <% else %>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="<%= cl_image_path photo.key %>" alt="slide <%= index %>">
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= service.name %></h2>
+            <p><%= service.description %></p>
+            <p><%= service.city %></p>
+            <p><%= service.availability %></p>
+            <%= link_to "Ir a detalles", service_path(service), class: "btn btn-ghost" %>
+            <%= link_to "Reserva ahora", "#", class: "btn btn-flat" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
   <div id="map"
-     style="width: 100%; height: 600px;"
-     data-services="<%= @services.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    class="mx-2"
+    style="width: 50%; height: 600px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
-
-  </div>
- <% end %>
+</div>
