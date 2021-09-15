@@ -1,8 +1,9 @@
 class ProvidersController < ApplicationController
-    def index
+  def index
   end
-   def new
-    @provider =  provider.new
+
+  def new
+    @provider = Provider.new
   end
 
   def create
@@ -27,8 +28,8 @@ class ProvidersController < ApplicationController
   end
 
   def set_provider
-    @provider = provider.find(params[:id])
-    authorize @provider
+    @provider = Provider.find(params[:id])
+    # authorize @provider
   end
 
   def provider_params

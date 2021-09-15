@@ -3,16 +3,14 @@ class ServicesController < ApplicationController
 
   def index
     @services = Service.all
-    @services = Service.geocoded
-
-    @marks = @services.geocoded.map do |service|
+    @markers = @services.geocoded.map do |service|
       {
         lat: service.latitude,
         lng: service.longitude
       }
     end
   end
-  # [hash, hash]
+
   def show
   end
 
@@ -53,9 +51,16 @@ class ServicesController < ApplicationController
   end
 
   def service_params
-    params.require(:service).permit(:name, :address, :telephone, :description, :availability, :category_id, :latitud,
-                                    :longitude, photos: [])
+    params.require(:service).permit(
+      :name,
+      :address,
+      :telephone,
+      :description,
+      :availability,
+      :category_id,
+      :latitude,
+      :longitude,
+      photos: []
+    )
   end
-
-  # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
 end

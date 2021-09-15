@@ -1,8 +1,9 @@
 class CustomersController < ApplicationController
-    def index
+  def index
   end
-   def new
-    @customer =  customer.new
+
+  def new
+    @customer = Customer.new
   end
 
   def create
@@ -27,7 +28,7 @@ class CustomersController < ApplicationController
   end
 
   def set_appointment
-    @customer = customer.find(params[:id])
+    @customer = Customer.find(params[:id])
     authorize @customer
   end
 
