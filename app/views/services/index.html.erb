@@ -32,11 +32,12 @@
         <div class="card-trip-infos">
           <div>
             <h2><%= service.name %></h2>
-            <p><%= service.description %></p>
-            <p><%= service.city %></p>
-            <p><%= service.availability %></p>
+            <p>Descripción: <%= service.description %></p>
+            <p>Ciudad: <%= service.city %></p>
+            <p>Disponibilidad: <%= service.availability %></p>
+            <p>Proveedor: <%= service.provider.full_name %></p>
             <%= link_to "Ir a detalles", service_path(service), class: "btn btn-ghost" %>
-            <%= link_to "Reserva ahora", "#", class: "btn btn-flat" %>
+            <%= link_to "Reserva ahora", "", class: "btn btn-flat" %>
           </div>
         </div>
       </div>

@@ -1,1 +1,22 @@
-<h1>nuevos grupo</h1>
+
+<h1>Appinment</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+      <h1>Solicitud de reserva</h1>
+      <%= simple_form_for @service do |f| %>
+        <%= f.input :name %>
+        <%= f.input :address %>
+        <%= f.input :telephone %>
+        <%= f.input :category %>
+        <%= f.input :description %>
+        <%= f.submit class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div>
+<%= link_to "volver", services_path, class:'btn btn-primary'%>
+  
+</div>
