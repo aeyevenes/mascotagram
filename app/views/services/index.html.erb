@@ -1,4 +1,12 @@
 <h1>Servicios</h1>
+
+
+  <div id="map"
+     style="width: 100%; height: 600px;"
+     data-services="<%= @services.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/bad-kuky-0ne/image/upload/v1631634844/gatoooooo_efwyd6.jpg);">
   <div class="container">
     <h1>Busca los mejores <strong>servicios de mascotas 🦕🐠🐿🐇🦔</strong></h1>
@@ -21,12 +29,7 @@
   <%= link_to new_service_path do %>
   <i class="fa fa-plus"></i> <h1> Add a new service </h1>
 
- <div class ="container my-3">
-  <div id="map"
-     style="width: 100%; height: 600px;"
-     data-services="<%= @services.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
 
   </div>
  <% end %>
+ 

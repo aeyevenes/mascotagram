@@ -3,15 +3,16 @@ class ServicesController < ApplicationController
 
   def index
     @services = Service.all
+    @services = Service.geocoded
 
-    @services = @services.geocoded.map do |service|
+    @marks = @services.geocoded.map do |service|
       {
         lat: service.latitude,
         lng: service.longitude
       }
     end
   end
-
+  # [hash, hash]
   def show
   end
 
