@@ -37,7 +37,7 @@
             <p>Disponibilidad: <%= service.availability %></p>
             <p>Proveedor: <%= service.provider.full_name %></p>
             <%= link_to "Ir a detalles", service_path(service), class: "btn btn-ghost" %>
-            <%= link_to "Reserva ahora", "", class: "btn btn-flat" %>
+            <%= link_to "Reservar", new_appointment_path, class: 'btn btn-flat' %>
           </div>
         </div>
       </div>
