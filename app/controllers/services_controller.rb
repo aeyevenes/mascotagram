@@ -1,17 +1,14 @@
 class ServicesController < ApplicationController
-  before_action :set_service, only: %i[show create edit update destroy]
+  before_action :set_service, only: %i[show  edit update destroy]
 
   def index
     @services = Service.all
-<<<<<<< HEAD
-=======
     @markers = @services.geocoded.map do |service|
       {
         lat: service.latitude,
         lng: service.longitude
       }
     end
->>>>>>> c64c77d121ee56316d1f5b48a0b39d21fcb46ca9
   end
 
   def show

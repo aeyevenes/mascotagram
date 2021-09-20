@@ -1,5 +1,7 @@
 class AppointmentsController < ApplicationController
+  before_action :set_appointment, only: %i[show create edit update destroy]
   def index
+    appointments = Appointment.all
   end
    def new
     @Appointment = Appointment.new
@@ -45,8 +47,6 @@ class AppointmentsController < ApplicationController
   end
 
   def set_appointment
-    @Appointment = Appointment.find(params[:id])
-    authorize @Appointment
   end
 
   def appointment_params
