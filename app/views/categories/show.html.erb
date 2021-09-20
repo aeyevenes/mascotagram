@@ -27,7 +27,7 @@
             <p><%= service.description %></p>
             <p><%= service.city %></p>
             <%= link_to "Ir a detalles", service_path(service), class: "btn btn-ghost" %>
-            <%= link_to "Reserva ahora", "#", class: "btn btn-flat" %>
+            <%= link_to "Reservar", new_appointment_path, class: 'btn btn-flat' %>
           </div>
         </div>
       </div>
