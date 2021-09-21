@@ -1,15 +1,7 @@
 class AppointmentsController < ApplicationController
-<<<<<<< HEAD
-  before_action :set_appointment, only: %i[show create edit update destroy]
-  def index
-    appointments = Appointment.all
-=======
-  before_action :set_appointment, only: %i[show edit update destroy create]
-
+  before_action :set_appointment, only: %i[new show create edit update destroy]
   def index
     @appointment = Appointment.all
-
->>>>>>> 70b4596d56f341d57b3a1542d416e85681afbc41
   end
 
   def new
@@ -52,19 +44,11 @@ class AppointmentsController < ApplicationController
 
   private
 
-  def set_user
-    @user = current_user
-  end
-
   def set_appointment
-<<<<<<< HEAD
-=======
-    @appointment = Appointment.find(params[:id])
-    authorize @appointment
->>>>>>> 70b4596d56f341d57b3a1542d416e85681afbc41
+    @appointment = Appointment.new(params[:id])
   end
 
   def appointment_params
     params.require(:service).permit(:name, :description, :price, :photo)
+    end
   end
-end

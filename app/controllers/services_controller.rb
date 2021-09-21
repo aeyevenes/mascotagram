@@ -1,9 +1,6 @@
 class ServicesController < ApplicationController
-<<<<<<< HEAD
-  before_action :set_service, only: %i[show  edit update destroy]
-=======
-  before_action :set_service, only: %i[show edit update destroy]
->>>>>>> 70b4596d56f341d57b3a1542d416e85681afbc41
+  before_action :set_service, only: %i[new create show  edit update destroy]
+
 
   def index
     @services = Service.all
