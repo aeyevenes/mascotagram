@@ -1,8 +1,14 @@
 class ServicesController < ApplicationController
-  before_action :set_service, only: %i[show create edit update destroy]
+  before_action :set_service, only: %i[show edit update destroy]
 
   def index
     @services = Service.all
+    @markers = @services.geocoded.map do |service|
+      {
+        lat: service.latitude,
+        lng: service.longitude
+      }
+    end
   end
 
   def show
@@ -13,10 +19,15 @@ class ServicesController < ApplicationController
   end
 
   def create
+    @service = Service.new(service_params)
+
+    @service.provider = current_provider if current_provider
+
     if @service.save
       redirect_to services_path
       flash[:notice] = "El servicio #{@service.name} ha sido creado exitosamente."
     else
+      flash[:notice] = "El servicio no pudo ser creado."
       render :new
     end
   end
@@ -45,6 +56,17 @@ class ServicesController < ApplicationController
   end
 
   def service_params
-    params.require(:service).permit(:name, :address, :telephone, :description, :availability, :category_id, photos: [])
+    params.require(:service).permit(
+      :name,
+      :address,
+      :city,
+      :telephone,
+      :description,
+      :availability,
+      :category_id,
+      :latitude,
+      :longitude,
+      photos: []
+    )
   end
 end

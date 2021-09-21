@@ -2,6 +2,7 @@
   <h1>Editar servicio</h1>
   <%= simple_form_for @service do |f| %>
     <%= f.input :name, label: "Nombre" %>
+    <%= f.input :city, label: "Ciudad" %>
     <%= f.input :address, label: "Dirección" %>
     <%= f.input :telephone, label: "Teléfono" %>
     <%= f.input :availability, label: "Horario de atención" %>
