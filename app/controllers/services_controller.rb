@@ -1,5 +1,9 @@
 class ServicesController < ApplicationController
+<<<<<<< HEAD
   before_action :set_service, only: %i[show  edit update destroy]
+=======
+  before_action :set_service, only: %i[show edit update destroy]
+>>>>>>> 70b4596d56f341d57b3a1542d416e85681afbc41
 
   def index
     @services = Service.all
@@ -19,10 +23,15 @@ class ServicesController < ApplicationController
   end
 
   def create
+    @service = Service.new(service_params)
+
+    @service.provider = current_provider if current_provider
+
     if @service.save
       redirect_to services_path
       flash[:notice] = "El servicio #{@service.name} ha sido creado exitosamente."
     else
+      flash[:notice] = "El servicio no pudo ser creado."
       render :new
     end
   end
@@ -54,6 +63,7 @@ class ServicesController < ApplicationController
     params.require(:service).permit(
       :name,
       :address,
+      :city,
       :telephone,
       :description,
       :availability,

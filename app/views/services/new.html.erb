@@ -1,21 +1,20 @@
-<h1>new services</h1>
 
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-      <h1>Create a new service</h1>
+      <h1>Crear nuevo Servicio</h1>
       <%= simple_form_for @service do |f| %>
-        <%= f.input :name %>
-        <%= f.input :address %>
-        <%= f.input :telephone %>
-        <%= f.input :category %>
-        <%= f.input :description %>
-        <%= f.submit class: 'btn btn-primary' %>
+        <%= f.input :name, label: "Nombre" %>
+        <%= f.input :address, label: "Dirección" %>
+        <%= f.input :telephone, label: "Teléfono" %>
+        <%= f.association :category, label: "Categoría", include_blank: false %>
+        <%= f.input :description, label: "Descripción" %>
+        <%= f.submit "Crear", class: 'btn btn-flat' %>
       <% end %>
     </div>
   </div>
 </div>
 <div>
-<%= link_to "volver", services_path, class:'btn btn-primary'%>
-  
+<%= link_to "Volver", services_path, class:'btn btn-primary'%>
+
 </div>
