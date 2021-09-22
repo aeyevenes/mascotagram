@@ -1,9 +1,7 @@
 class AppointmentsController < ApplicationController
-  before_action :set_appointment, only: %i[show edit update destroy create]
-
+  before_action :set_appointment, only: %i[new show create edit update destroy]
   def index
     @appointment = Appointment.all
-
   end
 
   def new
@@ -47,7 +45,7 @@ class AppointmentsController < ApplicationController
   #def set_user
    # @user = current_user
   # end
-
+  
   def set_appointment
     @appointment = Appointment.new(params[:id])
   end
