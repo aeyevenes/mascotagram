@@ -2,7 +2,8 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-      <h1>Crear nuevo Servicio</h1>
+    <h1 class="text-center">Crear Nuevo Servicio</h1>
+      <div class= "container my-5">
       <%= simple_form_for @service do |f| %>
         <%= f.input :name, label: "Nombre" %>
         <%= f.input :address, label: "Dirección" %>
@@ -15,6 +16,5 @@
   </div>
 </div>
 <div>
-<%= link_to "Volver", services_path, class:'btn btn-primary'%>
-
+<%= link_to "Volver", services_path, class="btn btn-secondary">Secondary</button>%>
 </div>

@@ -10,8 +10,6 @@ class AppointmentsController < ApplicationController
 
   def create
     @appointment = Appointment.new(appointment_params)
-    @appointment.user = @user
-    authorize @Appointment
     if @appointment.save
       redirect_to appointment_path(@appointment)
     else
@@ -43,12 +41,14 @@ class AppointmentsController < ApplicationController
   end
 
   private
-
+  #def set_user
+   # @user = current_user
+  # end
   def set_appointment
     @appointment = Appointment.new(params[:id])
   end
 
   def appointment_params
-    params.require(:service).permit(:name, :description, :price, :photo)
-    end
+       params.require(:service).permit(:name, :description, :price, :photo)
   end
+end
