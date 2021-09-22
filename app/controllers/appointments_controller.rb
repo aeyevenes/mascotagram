@@ -41,14 +41,16 @@ class AppointmentsController < ApplicationController
   end
 
   private
+
   #def set_user
    # @user = current_user
   # end
+  
   def set_appointment
     @appointment = Appointment.new(params[:id])
   end
 
   def appointment_params
-       params.require(:service).permit(:name, :description, :price, :photo)
+    params.require(:appointment).permit(:name)
   end
 end
