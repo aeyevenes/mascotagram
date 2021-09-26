@@ -1,16 +1,18 @@
-<h1>Appoinment</h1>
 
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+  <div class="card-body text-center">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1"> 
+    <div class="card-body text-center">
       <h1>Solicitud de reserva</h1>
       <%= simple_form_for @appointment  do |f| %>
         <%= f.input :status %>
-        <%= f.submit class: 'btn btn-primary' %>
+       <!--<%= f.submit class: 'btn btn-primary' %> -->
       <% end %>
     </div>
   </div>
 </div>
+<div class="card-body text-center">
 <%= link_to "volver", services_path, class:'btn btn-primary'%>
 <%= link_to "reserva", new_appointment_path, class:'btn btn-primary'%>
 </div>
