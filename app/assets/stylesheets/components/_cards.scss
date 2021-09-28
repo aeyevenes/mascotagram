@@ -5,16 +5,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: rgb(250, 245, 244);
   font-size: 24px;
   font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
   border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0,0,0,0.8);
 
   a {
     text-decoration: none;
-    color: white;
+    color: rgb(243, 237, 237);
     text-shadow: 2px 2px #000000;
   }
 }
@@ -47,7 +47,7 @@
 }
 .card-trip {
   overflow: hidden;
-  background: white;
+  background: rgb(220, 240, 167);
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
