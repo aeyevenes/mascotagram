@@ -1,5 +1,6 @@
 class AppointmentsController < ApplicationController
   before_action :set_appointment, only: %i[new show create edit update destroy]
+  
   def index
     @appointment = Appointment.all
   end
@@ -36,7 +37,7 @@ class AppointmentsController < ApplicationController
     if @appointment.destroy
       redirect_to appointment_path
     else
-      render :show
+      render :new
     end
   end
 
@@ -45,7 +46,7 @@ class AppointmentsController < ApplicationController
   #def set_user
    # @user = current_user
   # end
-  
+
   def set_appointment
     @appointment = Appointment.new(params[:id])
   end

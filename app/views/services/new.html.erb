@@ -9,11 +9,11 @@
         <%= f.input :telephone, label: "Teléfono" %>
         <%= f.association :category, label: "Categoría", include_blank: false %>
         <%= f.input :description, label: "Descripción" %>
-        <%= f.submit "Crear", class: 'btn btn-flat' %>
+        <%= f.submit "Crear", class: 'btn btn-primary' %>
       <% end %>
     </div>
   </div>
 </div>
 <div>
-<%= link_to "Volver", services_path, class="btn btn-primary">
+<%= link_to "Volver", services_path, class:'btn btn-primary'%>
 </div>
