@@ -26,13 +26,9 @@
     <div class="card-body text-center">
   <!-- <div class="d-flex"> -->
     <%= link_to "Volver", services_path, class:'btn btn-primary'%>
-    <%= link_to "Eliminar", services_path, data: { confirm: "¿Estás seguro de eliminar #{@service.name}?"}, class: 'btn btn-primary' %>
-    <%= link_to "Editar", edit_service_path, class: 'btn btn-primary' %>
+    <%= link_to "Eliminar", services_path, data: { confirm: "¿Estás seguro de eliminar #{@service.name}?"}, class: 'btn btn-secondary' %>
+    <%= link_to "Editar", edit_service_path, class: 'btn btn-secondary' %>
     <%= link_to "Reservar", new_appointment_path, class: 'btn btn-primary' %>
   </div>
 </div>
-    <!--<%= link_to "Eliminar", service_path, data: { confirm: "¿Estás seguro de eliminar #{@service.name}?"}, class: 'btn btn-ghost' %> -->
-    <%= link_to "Editar", edit_service_path, class: 'btn btn-ghost' %>
-    <%= link_to "Reservar", new_appointment_path, class: 'btn btn-primary' %>
-   </div>
- </div>
+    
