@@ -31,8 +31,6 @@ class ServicesController < ApplicationController
   def show
   end
 
-
-
   def edit
   end
 
@@ -46,8 +44,8 @@ class ServicesController < ApplicationController
   end
 
   def destroy
-    @service.destroy
-    redirect_to services_path
+   @service.destroy
+   redirect_to services_path
   end
 
   private

@@ -3,8 +3,8 @@
   <div class="card-body text-center">
     <div class="col-xs-12 col-sm-10 col-sm-offset-1"> 
 
-<h2>Solicitud de reserva</h2>
-
+<h2>Solicitud de reserva </h2>
+<h2>Si esta registardo ingrese como cliente </h2>
 <form action="/action_page.php">
   <label for="fname">Nombre Mascota:</label><br>
   <input type="text" id="fname" name="fname" value=""><br>
@@ -29,4 +29,5 @@
 <div class="card-body text-center">
 <%= link_to "volver", services_path, class:'btn btn-primary'%>
 <%= link_to "reserva", new_appointment_path, class:'btn btn-primary'%>
+<%= link_to "Ingreso cliente", new_customer_session_path, class: "btn btn-primary" %>
 </div>
