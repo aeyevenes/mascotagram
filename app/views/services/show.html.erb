@@ -1,5 +1,4 @@
-
-    <div class="container">
+<div class="container">
     <div class="card">
     <div class="card-body">
     <div class="card-body text-center">
@@ -26,9 +25,13 @@
     <div class="card">
     <div class="card-body text-center">
   <!-- <div class="d-flex"> -->
-    <%= link_to "Volver", services_path, class:'btn btn-secondary'%>
-    <%= link_to "Eliminar", services_path, data: { confirm: "¿Estás seguro de eliminar #{@service.name}?"}, class: 'btn btn-outline-secondary' %>
-    <%= link_to "Editar", edit_service_path, class: 'btn btn-flat' %>
-    <%= link_to "Reservar", new_appointment_path, class: 'btn btn-flat' %>
+    <%= link_to "Volver", services_path, class:'btn btn-primary'%>
+    <!--<%= link_to "Eliminar", service_path, data: { confirm: "¿Estás seguro de eliminar #{@service.name}?"}, class: 'btn btn-ghost' %> -->
+    <%= link_to "Editar", edit_service_path, class: 'btn btn-ghost' %>
+    <%= link_to "Reservar", new_appointment_path, class: 'btn btn-primary' %>
   </div>
+<<<<<<< HEAD
 </div>
+=======
+</div>
+>>>>>>> 0748ba8c5295f2247634e5b507065a62d59356db

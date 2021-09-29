@@ -10,7 +10,9 @@
     <%= f.association :category, label: "Categoría", include_blank: false %>
     <%= f.input :description, label: "Descripción" %>
     <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-    <%= f.submit "Editar", class: 'btn btn-flat' %>
+    <%= f.submit "Editar", class: 'btn btn-primary' %>
   <% end %>
-  <%= link_to "Volver al detalle", service_path(@service), class:'btn btn-secondary'%>
+  <div class="card-body text-center">
+  <%= link_to "Volver al detalle", service_path(@service), class:'btn btn-primary'%>
+  <%= link_to "Eliminar", categories_path, data: { confirm: "¿Estás seguro de eliminar #{@service.name}?"}, class: 'btn btn-primary' %>
 </div>

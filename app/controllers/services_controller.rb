@@ -1,21 +1,6 @@
 class ServicesController < ApplicationController
-  before_action :set_service, only: %i[new create show  edit update destroy]
-
-
-  def index
-    @services = Service.all
-    @markers = @services.geocoded.map do |service|
-      {
-        lat: service.latitude,
-        lng: service.longitude
-      }
-    end
-  end
-
-  def show
-  end
-
-  def new
+  before_action :set_service, only: %i[ show  edit update destroy]
+ def new
     @service = Service.new
   end
 
@@ -33,6 +18,19 @@ class ServicesController < ApplicationController
     end
   end
 
+  def index
+    @services = Service.all
+    @markers = @services.geocoded.map do |service|
+      {
+        lat: service.latitude,
+        lng: service.longitude
+      }
+    end
+  end
+
+  def show
+  end
+
   def edit
   end
 
@@ -46,8 +44,8 @@ class ServicesController < ApplicationController
   end
 
   def destroy
-    @service.destroy
-    redirect_to services_path
+   @service.destroy
+   redirect_to services_path
   end
 
   private
