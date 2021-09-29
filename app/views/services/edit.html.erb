@@ -13,4 +13,7 @@
     <%= f.submit "Editar", class: 'btn btn-primary' %>
   <% end %>
   <%= link_to "Volver al detalle", service_path(@service), class:'btn btn-primary'%>
+  <div class="card-body text-center">
+  <%= link_to "Volver al detalle", service_path(@service), class:'btn btn-primary'%>
+  <%= link_to "Eliminar", categories_path, data: { confirm: "¿Estás seguro de eliminar #{@service.name}?"}, class: 'btn btn-primary' %>
 </div>
