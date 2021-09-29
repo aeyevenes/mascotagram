@@ -1,4 +1,3 @@
-
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-sm-offset-1">
@@ -10,11 +9,9 @@
         <%= f.input :telephone, label: "Teléfono" %>
         <%= f.association :category, label: "Categoría", include_blank: false %>
         <%= f.input :description, label: "Descripción" %>
-        <%= f.submit "Crear", class: 'btn btn-flat' %>
+        <%= f.submit "Crear", class: 'btn btn-primary' %>
       <% end %>
     </div>
   </div>
 </div>
-<div>
-<%= link_to "Volver", services_path, class="btn btn-secondary">Secondary</button>%>
-</div>
+<%= link_to "Volver", services_path, class:'btn btn-primary'%>
