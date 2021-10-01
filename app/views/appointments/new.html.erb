@@ -2,7 +2,7 @@
   <div class="container">
   <div class="row">
   <div class="card-body text-center">
-    <div class="col-xs-12 col-sm-10 col-sm-offset-1"> 
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
 
 <h2>Solicitud de reserva </h2>
 <h2>Si esta registardo ingrese como cliente </h2>
@@ -12,7 +12,7 @@
   <label for="lname">correo electronico - telefono contacto</label><br>
   <input type="text" id="lname" name="lname" value=""><br><br>
   <!-- <input type="submit" value="Reservar"> -->
-</form> 
+</form>
 
 <!-- <div class="container">
   <div class="row">
@@ -21,32 +21,85 @@
     <div class="col-xs-12 col-sm-10 col-sm-offset-1">
     <div class="card-body text-center">
 =======
-    <div class="col-xs-12 col-sm-10 col-sm-offset-1"> 
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
 >>>>>>> a6f5b4d535afcc1809910bccc76af3496184f672
       <h1>Solicitud de reserva</h1>
       <%= simple_form_for @appointment  do |f| %>
         <%= f.input :status %>
         <%= f.input :status %>
-       <%= f.submit class: 'btn btn-primary' %> 
+       <%= f.submit class: 'btn btn-primary' %>
       <% end %>
     </div>
   </div> -->
-<div> 
+<div>
 <div class="card-body text-center">
 <%= link_to "volver", services_path, class:'btn btn-primary'%>
 <%= link_to "reserva", new_appointment_path, class:'btn btn-primary'%>
 <%= link_to "Ingreso cliente", new_customer_session_path, class: "btn btn-primary" %>
 </div>
-<div class="footer">
-  <div class="footer-links">
-    <a href="#"><i class="fab fa-github"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-facebook"></i></a>
-    <a href="#"><i class="fab fa-twitter"></i></a>
-    <a href="#"><i class="fab fa-linkedin"></i></a>
-  </div>
-  <div class="footer-copyright">
-     <H1>Somos la coneccion para combatir el Maltrato animal!!</h1>
-     Servicios de Mascotas!! Ven a Ser Parte De Esta Gran COMUNIDAD!! <i class="fas fa-heart"></i> MASCOTAGRAM!!
-  </div>
-</div>
+<!-- footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-xs-12">
+                    <div class="first">
+                        <h4>SERVICIOS DE MASCOTAS🐱🐶🐠🐰🐯😹</h4>
+                        <p> Nos Comprometemos a Combatir el Maltrato anima!!</p>
+                        <p> Servicio de Adopcion.</p>
+                        <p> Servicios de Rescate.</p>
+                        <p> Servicios de Estetica y salud medicina complementaria.</p>
+                        <p> Servicios de Nutricion y alimentacion animal.</p>
+                        <p> Servicios de Funeraria y Cementerios(crematorio).</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-xs-12">
+                    <div class="second">
+                        <h4> Se parte de esta Gran COMUNIDAD 💜</h4>
+                        <ul>
+                            <li><a href="#">REGISTRATE</a></li>
+                            <li><a href="#">PUBLICA</a></li>
+                            <li><a href="#">COMPARTE</a></li>
+                            <li><a href="#">ADOPTA</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-xs-12">
+                    <div class="third">
+                        <h4> Contactanos</h4>
+                        <ul>
+                            <li>Vanessa Nicol Sagredo Valdivia </li>
+                            <li> Alejandro Jevenes</li>
+
+
+                          <li><i class="far fa-envelope"></i> sagredovanessa619@mascotagram.com</li>
+                            <li><i class="far fa-envelope"></i> ajevenes@mascotagram.com</li>
+
+
+                          <li><i class="fas fa-map-marker-alt"></i> Barrio lastarrias #3048 -Providencia-Santiago de Chile</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="line"></div>
+                    <div class="second2">
+                        <a href="https://codepen.io/AndreeaBunget" target="_blank"> <i class="fab fa-codepen fa-2x margin"></i></a>
+                        <a href="https://github.com/WebDeveloperCodeRep" target="_blank"> <i class="fab fa-github fa-2x margin"></i></a>
+                        <a href="https://www.linkedin.com/in/andreea-mihaela-bunget-a4248812b/" target="_blank"> <i class="fab fa-linkedin fa-2x margin"></i></a>
+                        <a href="https://www.youtube.com/channel/UCX674BUbomzBCakbb75lhfA?view_as=subscriber" target="_blank"><i class="fab fa-youtube fa-2x margin" ></i></a>
+
+                    </div>
+
+                </div>
+            </div>
+            </div>
+    </div>
+
+
+
+</body>
